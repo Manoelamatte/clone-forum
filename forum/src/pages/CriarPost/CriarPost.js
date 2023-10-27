@@ -8,7 +8,30 @@ import { useVerificarToken } from "../../hooks/useverificarToken";
 
 const CriarPost = () => {
  
+  const [title, setTitle] = useState('')
+  const [content, setContent] = useState('')
+  const [image, setImage] = useState('')
+  const [hashtag, setHashtag] = useState('')
 
+  const criarPostApi = async(e)=>{
+    e.preventDefault()
+
+    if(!title || !content){
+      alert("Titulo e conteúdo são campos obrigatórios.")
+    }
+
+    const hashtagsArray = hashtag.split(",")
+
+    await createPost(title, content, image, hashtagsArray)
+    .then((response)=>{
+      console.log("post criado com sucesso!", response)
+    })
+    .catch((error)=>{
+      console.log("erro ao criar o post", error)
+    })
+  }
+
+  useVerificarToken()
 
   return (
    <>

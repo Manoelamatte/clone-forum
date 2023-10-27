@@ -1,5 +1,8 @@
 
+import Card from "../../componentes/Card/Card";
 import HeaderPerfil from "../../componentes/Header/HeaderPerfil";
+import Historicos from "../../componentes/Historicos/Historicos";
+import Menu from "../../componentes/Menu/Menu";
 
 import { SectionStyle } from "./style";
 
@@ -13,13 +16,15 @@ function Home() {
 
     return (
         <>
-            <HeaderPerfil />
+            <HeaderPerfil
+             titulo={'Questions'}
+             />
 
             <SectionStyle>
-                {/* <Menu />
+                <Menu />
                 <Card />
 
-                <Historicos /> */}
+                <Historicos />
 
             </SectionStyle>
 
