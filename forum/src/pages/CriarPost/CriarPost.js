@@ -27,7 +27,7 @@ const CriarPost = () => {
       console.log("post criado com sucesso!", response)
     })
     .catch((error)=>{
-      console.log("erro ao criar o post", error)
+      console.log("errooo ao criar o post", error)
     })
   }
 
@@ -35,7 +35,44 @@ const CriarPost = () => {
 
   return (
    <>
-   criarpost
+   <HeaderPerfil titulo={"new question"}/>
+
+   <ContainerCriarPost>
+      {/* <Menu/> */}
+      <FormStyle onSubmit={criarPostApi}>
+        <InputStyle
+          placeholder="titulo"
+          value={title}
+          onChange={(e)=> setTitle(e.target.value)}
+          required
+        />
+
+        <TextareaStyle
+        placeholder="conteúdo"
+        value={content}
+        onChange={(e)=> setContent(e.target.value)}
+        required
+        />
+
+        <InputStyle
+        type="text"
+        placeholder="Hastags"
+        value={hashtag}
+        onChange={(e)=> setHashtag(e.target.value)}
+        />
+
+        <InputStyle
+        type="text"
+        label="Imagem"
+        placeholder="Digite o endereço da imagem"
+        onChange={(e)=> setImage(e.target.value)}
+        />
+
+        <ButtonStyle type="Submit">
+          Enviar
+        </ButtonStyle>
+      </FormStyle>
+   </ContainerCriarPost>
    </>
   );
 };

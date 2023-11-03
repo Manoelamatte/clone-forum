@@ -16,7 +16,8 @@ function Card() {
     }, [])
 
   return (
-    <>
+
+    <ContainerCardHome>
     {
       loading ?(
         <ContainerCard>
@@ -24,11 +25,11 @@ function Card() {
             return(
               <CardStyle key={dado.post.id}>
                   <PerfilUsuario>
-                    <ImageCard src={'https://s2-techtudo.glbimg.com/SSAPhiaAy_zLTOu3Tr3ZKu2H5vg=/0x0:1024x609/888x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_08fbf48bc0524877943fe86e43087e7a/internal_photos/bs/2022/c/u/15eppqSmeTdHkoAKM0Uw/dall-e-2.jpg'} />
+                    <ImgCard src={'https://s2-techtudo.glbimg.com/SSAPhiaAy_zLTOu3Tr3ZKu2H5vg=/0x0:1024x609/888x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_08fbf48bc0524877943fe86e43087e7a/internal_photos/bs/2022/c/u/15eppqSmeTdHkoAKM0Uw/dall-e-2.jpg'} />
                  
  
                   <ContainerPerfil>
-                    <HomeCard>{dado.creator_username}</HomeCard>
+                    <NomeCard>{dado.creator_username}</NomeCard>
                     <MensagemCard>{dado.post_created_at}</MensagemCard>
                   </ContainerPerfil>
                 </PerfilUsuario>
@@ -53,7 +54,7 @@ function Card() {
         </ContainerCard>
       ):(<p>Loading</p>)
     }
-    </>
+    </ContainerCardHome>
   )
 }
 
